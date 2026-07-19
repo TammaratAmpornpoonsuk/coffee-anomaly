@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Customer : MonoBehaviour
+public class CustomerView : MonoBehaviour
 {
     [SerializeField]
     private Animator _animator;

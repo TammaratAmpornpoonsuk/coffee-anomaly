@@ -4,41 +4,36 @@ using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
+    [Header("Order Manager")]
+    [SerializeField] private OrderManager _orderManager;
+
     [Header("Customer")]
-    [SerializeField]
-    private Customer _customerMalePrefab;
-    [SerializeField]
-    private Customer _customerFemalePrefab;
-    [SerializeField]
-    private Transform _customerSpawnLocator;
-    [SerializeField]
-    private Transform[] _chairLocators;
+    [SerializeField] private CustomerView _customerMalePrefab;
+    [SerializeField] private CustomerView _customerFemalePrefab;
+    [SerializeField] private Transform _customerSpawnLocator;
+    [SerializeField] private Transform[] _chairLocators;
 
     [Header("UI")]
-    [SerializeField]
-    private Button _spawnNewCustomer;
-    [SerializeField]
-    private Button _removeCustomer;
-    [SerializeField]
-    private Button _serve;
-    [SerializeField]
-    private Button _backToMenu;
+    [SerializeField] private Button _spawnNewCustomer;
+    [SerializeField] private Button _removeCustomer;
+    [SerializeField] private Button _serve;
+    [SerializeField] private Button _receiveOrder;
+    [SerializeField] private Button _backToMenu;
 
     [Header("Customer Action")]
-    [SerializeField]
-    private Button _idle;
-    [SerializeField]
-    private Button _sitIdle;
-    [SerializeField]
-    private Button _gotoChair;
+    [SerializeField] private Button _idle;
+    [SerializeField] private Button _sitIdle;
+    [SerializeField] private Button _gotoChair;
 
-    private Customer _customer;
+    private CustomerView _customer;
+    private Order _order;
 
     private void Awake()
     {
         _spawnNewCustomer.onClick.AddListener(OnSpawnNewCustomer);
         _removeCustomer.onClick.AddListener(OnRemoveCustomer);
         _serve.onClick.AddListener(OnServeMenu);
+        _receiveOrder.onClick.AddListener(OnReceiveOrder);
         _backToMenu.onClick.AddListener(OnBackToMenu);
 
         _idle.onClick.AddListener(OnIdle);
@@ -55,7 +50,7 @@ public class GameplayManager : MonoBehaviour
             return;
         }
 
-        Customer customer = RandomCustomer();
+        CustomerView customer = RandomCustomer();
 
         _customer = Instantiate(customer);
         _customer.SetPositionAndRotation(
@@ -76,7 +71,19 @@ public class GameplayManager : MonoBehaviour
 
     private void OnServeMenu()
     {
-        
+        if(_order == null)
+        {
+            Debug.LogError("Currently has no order");
+            return;
+        }
+        Debug.Log("serve : " + _order.Name);
+        _order = null;
+    }
+
+    private void OnReceiveOrder()
+    {
+        _order = _orderManager.CreateOrder("Late");
+        Debug.Log("Current order to make : " + _order.Name);
     }
 
     private void OnBackToMenu()
@@ -102,9 +109,9 @@ public class GameplayManager : MonoBehaviour
         _customer.SetPositionAndRotation(target.position, target.rotation);
     }
 #endregion
-    private Customer RandomCustomer()
+    private CustomerView RandomCustomer()
     {
-        Customer[] customerPrefabs = new Customer[]
+        CustomerView[] customerPrefabs = new CustomerView[]
         {
             _customerFemalePrefab,
             _customerMalePrefab
