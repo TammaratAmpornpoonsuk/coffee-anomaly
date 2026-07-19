@@ -952,6 +952,7 @@ GameObject:
   - component: {fileID: 373884985}
   - component: {fileID: 373884984}
   - component: {fileID: 373884983}
+  - component: {fileID: 373884986}
   m_Layer: 0
   m_Name: Camera2
   m_TagString: MainCamera
@@ -1077,6 +1078,26 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &373884986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373884981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954631973cf5d954da3d802f31bca5cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  _dragMouseButton: 1
+  _sensitivity: 2
+  _invertTilt: 0
+  _minYaw: -60
+  _maxYaw: 60
+  _minPitch: -30
+  _maxPitch: 45
+  _smoothing: 10
 --- !u!43 &389807777
 Mesh:
   m_ObjectHideFlags: 0
@@ -3023,6 +3044,7 @@ GameObject:
   - component: {fileID: 729346470}
   - component: {fileID: 729346469}
   - component: {fileID: 729346468}
+  - component: {fileID: 729346471}
   m_Layer: 0
   m_Name: Camera1
   m_TagString: MainCamera
@@ -3148,6 +3170,26 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &729346471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729346466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954631973cf5d954da3d802f31bca5cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  _dragMouseButton: 1
+  _sensitivity: 2
+  _invertTilt: 0
+  _minYaw: -60
+  _maxYaw: 60
+  _minPitch: -30
+  _maxPitch: 45
+  _smoothing: 10
 --- !u!1 &791385897
 GameObject:
   m_ObjectHideFlags: 0
@@ -7122,7 +7164,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1733294359}
-  - component: {fileID: 1733294361}
   - component: {fileID: 1733294360}
   m_Layer: 0
   m_Name: Cameras
@@ -7171,20 +7212,6 @@ MonoBehaviour:
   _camera2: {fileID: 402799422}
   _camera3: {fileID: 1799565543}
   _camera4: {fileID: 627869219}
---- !u!114 &1733294361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733294358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 954631973cf5d954da3d802f31bca5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  _minPitch: -20
-  _maxPitch: 20
 --- !u!1 &1740888239
 GameObject:
   m_ObjectHideFlags: 0
@@ -7825,6 +7852,7 @@ GameObject:
   - component: {fileID: 1876990273}
   - component: {fileID: 1876990272}
   - component: {fileID: 1876990271}
+  - component: {fileID: 1876990274}
   m_Layer: 0
   m_Name: Camera3
   m_TagString: MainCamera
@@ -7950,6 +7978,26 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1876990274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876990269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954631973cf5d954da3d802f31bca5cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  _dragMouseButton: 1
+  _sensitivity: 2
+  _invertTilt: 0
+  _minYaw: -60
+  _maxYaw: 60
+  _minPitch: -30
+  _maxPitch: 45
+  _smoothing: 10
 --- !u!43 &1902027376
 Mesh:
   m_ObjectHideFlags: 0
@@ -8140,6 +8188,7 @@ GameObject:
   - component: {fileID: 1911920084}
   - component: {fileID: 1911920083}
   - component: {fileID: 1911920082}
+  - component: {fileID: 1911920085}
   m_Layer: 0
   m_Name: Camera4
   m_TagString: MainCamera
@@ -8265,6 +8314,26 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1911920085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911920080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954631973cf5d954da3d802f31bca5cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  _dragMouseButton: 1
+  _sensitivity: 2
+  _invertTilt: 0
+  _minYaw: -60
+  _maxYaw: 60
+  _minPitch: -30
+  _maxPitch: 45
+  _smoothing: 10
 --- !u!1 &2004967865
 GameObject:
   m_ObjectHideFlags: 0
